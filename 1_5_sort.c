@@ -55,7 +55,7 @@ int main() {
             break;
 
         case 2:
-            sort(ar, index);
+            sort(ar, index); 
             break;
 
         case 3:

@@ -1,9 +1,9 @@
 #include<stdio.h>
 
-void recursive_order_print(int ar[], int pos) {
+void recurs_print(int ar[], int pos) {
 
     if(pos > 0)
-        recursive_order_print(ar, pos-1);
+        recurs_print(ar, pos-1);
 
     printf(" %d |",ar[pos]);
 }
@@ -21,8 +21,7 @@ int main() {
         scanf("%d", &ar[i]);
     } 
 
-    printf("===========PRINTING IN RECURSION============\n\n");
-    recursive_order_print(ar, size-1);
+    recurs_print(ar, size-1);
 
     return 0;
 }

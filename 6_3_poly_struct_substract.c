@@ -1,17 +1,9 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 struct poly {
     int coef, expo;
 };
 
-int getPolynomial(struct poly polynomial[]) {
+int readPolynomial(struct poly polynomial[]) {
     
     char seperator;
     int i = 0;
@@ -82,10 +74,10 @@ int main()
     int s1, s2, sres;
     
     printf("Enter polynomial 1 : ");
-    s1 = getPolynomial(poly1);
+    s1 = readPolynomial(poly1);
     
     printf("Enter polynomial 2 : ");
-    s2 = getPolynomial(poly2);
+    s2 = readPolynomial(poly2);
 
     showPolynomial(poly1, s1);
     printf("\n");

@@ -17,24 +17,46 @@ void push(int e)
 	top=t;
 }
 
-void pop()
-{
-	if(top==NULL)
-	{
-		printf("\nLinked Stack is empty");
-	}
-	else{
-		printf("%d\n",top->data);
-		top=top->next;
-	}
+int pop() {
+    if(top == NULL) {
+        printf("ERROR: Stack underflow.\n");
+        return -1; 
+    }
+    stack *temp = top;
+    top = top->next;
+    return temp->data;
 }
 
-int main()
-{
-	push(10);
-	push(20);
-	pop();
-	push(30);
-	pop();
-	pop();
+
+
+int main() {
+    int ch, e;
+    
+    do {
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+        
+        switch (ch) {
+            case 1:
+                printf("Enter the value to push: ");
+                scanf("%d", &e);
+                push(e);
+                break;
+            case 2:
+                e= pop();
+                printf("Popped %d from the stack.\n", e);
+                break;
+            case 3:
+                printf("Exiting the program.\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (ch != 3);
+
+    return 0;
 }
+

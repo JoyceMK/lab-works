@@ -5,7 +5,7 @@ int top = -1;
 
 void push() {
     if(top + 1 == SIZE) {
-        printf("ERROR : Stack overflow!! \n");
+        printf("Stack overflow!! \n");
         return;
     }
     printf("Enter the element : ");
@@ -14,7 +14,7 @@ void push() {
 int pop() {
     if(top == -1) {
 
-        printf("ERROR : Stack underflow!! \n");
+        printf("Stack underflow!! \n");
         return 0;
     }
     return stack[top--];
@@ -32,7 +32,7 @@ int main() {
     int opt,item;
     do {
 
-        printf("\n\n1.Push \n2.Pop \n3.Peek \n4.Quit \nEnter your choice : ");
+        printf("\n1.Push \n2.Pop \n3.Peek \n4.Quit \nEnter your choice : ");
         scanf("%d", &opt);
 
         switch (opt)

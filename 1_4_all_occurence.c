@@ -2,9 +2,10 @@
 
 int search_all_occurence(int ar[], int size, int item) {
 
+	int i;
     int count = 0;
     printf("\nPositions : ");
-    for(int i=0; i < size; i++) {
+    for(i=0; i < size; i++) {
         if(ar[i] == item) {
             printf("%d, ", i+1);
             count++;
@@ -37,7 +38,7 @@ int main() {
         count = search_all_occurence(ar, size, item);
         printf("\n\n %d occurences detected.\n\n", count);
 
-        printf("Do you want to continue (y/*) : ");
+        printf("Do you want to continue (y/n) : ");
         scanf(" %c", &opt);
     }while (opt=='y');
 }

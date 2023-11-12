@@ -1,46 +1,51 @@
 #include<stdio.h>
-int num=7;
-void fnWithLocal() {
-	int num = 0;
+int num = 10;
+
+void callForGlobal() {
+	printf("Global num from function : %d\n\n", num);
+}
+
+void callForLocal() {
 	
-	printf("My num is %d, I'm incrementing it as %d. I wont remember it next time \n", num, ++num);
+	int num = 7;
+	
+	printf("Local num is : %d\n\n", num);
+	num++;
 	
 }
 
-void fnWithStatic() {
+void callForStatic() {
 	
-	static int num = 0;
+	static int num = 7;
 	
-	printf("My num is %d, I'm incrementing it as %d. I will remember it next time \n", num, ++num);
-}
-
-void fnWithGlobal() {
+	printf("Static num is : %d\n\n", num);
+	num++;
 	
-	printf("Global num from function is also %d \n", num);
 }
 
 int main() {
 	
-	register int r = 0;
+	register int regNum = 0;
 	
-	printf("R register now has %d \n", r);
-	while(r != 30000) {
-		r++;
+	printf("Global num from main : %d\n\n", num);
+	callForGlobal();
+	
+	callForLocal();
+	callForLocal();
+	
+	callForStatic();
+	num++;
+	callForStatic();
+	
+	printf("Register num is %d now \n\n", num);
+	
+	while(regNum != 30000) {
+		
+		regNum++;
 	}
-	printf("Now register is %d, Register is fast\n", r);
+
 	
-	printf("\n\n");
+	printf("Register num is %d now \n\n", num);
+
 	
-	printf("Global num from main is %d \n", num);
-	fnWithGlobal();
-	
-	printf("\n\n");
-	fnWithLocal();
-	fnWithLocal();
-	
-	printf("\n\n");
-	fnWithStatic();
-	fnWithStatic();
-	
-	return 0;
 }

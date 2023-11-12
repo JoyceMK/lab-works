@@ -85,16 +85,29 @@ void delete(int e)
 
 
 
-int main()
-{
-	insert(10);
-	insert(20);
-	insert(30);
-	display();
-	delete(20);
-	display();
-	delete(100);
-	delete(10);
-	display();
+int main() {
+	int opt, data;
+	do{
+		
+		printf("\n\n1.Insert \n2.Display \n3.Exit \nEnter your option : ");
+		scanf("%d", &opt);
+		
+		switch(opt) {
+			case 1:
+				printf("Enter element : ");
+				scanf("%d", &data);
+				insert(data);
+				break;
+				
+			case 2:
+				display();
+				break;
+				
+			case 3:
+				break;
+		}
+	}while(opt!=3);
+	
 	return 0;
 }
+

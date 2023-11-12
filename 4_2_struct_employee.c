@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #define MAX 100
-
 struct Employee {
     int eno;
     char ename[50];
     double esal;
     int dno;
 };
-
 void searchEmployeeByNumber(struct Employee employees[], int n, int eno) {
     int i;
     for (i = 0; i < n; i++) {
         if (employees[i].eno == eno) {
             printf("Employee found:\n Employee Number: %d\n Employee Name: %s\n Employee Salary: %f\n Department Number: %d\n",
             employees[i].eno, employees[i].ename, employees[i].esal, employees[i].dno);
-            
             return;
         }
     }
@@ -49,10 +46,10 @@ void sortEmployeesBySalary(struct Employee employees[], int n) {
 }
 
 int deleteEmployeeByNumber(struct Employee employees[], int n, int eno) {
-    int i;
+    int i,j;
     for (i = 0; i < n; i++) {
         if (employees[i].eno == eno) {
-            for (int j = i; j < n - 1; j++) {
+            for (j = i; j < n - 1; j++) {
                 employees[j] = employees[j + 1];
             }
             n--;
@@ -65,7 +62,7 @@ int deleteEmployeeByNumber(struct Employee employees[], int n, int eno) {
 }
 
 void insertEmployee(struct Employee employees[], int i, int n) {
-    if(i+1 == n) {
+    if(i == n) {
         printf("Memory full");
         return;
     }
@@ -81,9 +78,10 @@ void insertEmployee(struct Employee employees[], int i, int n) {
 }
 
 void displayEmployees(struct Employee employees[], int n) {
-    printf("Employee Details:\n");
+    int i;
+	printf("Employee Details:\n");
     printf("ENO\tENAME\t\tESALARY\tDNO\n");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("%d\t%s\t%f\t%d\n", employees[i].eno, employees[i].ename, employees[i].esal, employees[i].dno);
     }
 }
@@ -98,7 +96,7 @@ int main() {
     int choice;
     do {
         printf("\n\nMenu:\n");
-        printf("1. Insert \n2. Search by eno \n3. Sort by name \n4. Sort by salary\n5. Delete by eno\n 6.Display \n7.Delete \nEnter your choice: ");
+        printf("1. Insert \n2. Search by eno \n3. Sort by name \n4. Sort by salary\n5. Delete by eno\n6.Display \n7.Exit \nEnter your choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -127,7 +125,7 @@ int main() {
             case 5:
                 printf("Enter the Employee Number to delete: ");
                 scanf("%d", &eno);
-                n = deleteEmployeeByNumber(employees, i, eno);
+                i = deleteEmployeeByNumber(employees, i, eno);
                 break;
 
             case 6:
@@ -145,3 +143,4 @@ int main() {
 
     return 0;
 }
+

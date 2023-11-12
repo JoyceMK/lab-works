@@ -79,7 +79,7 @@ int main() {
 	
 	do {
 		
-		printf("\n\n1.Insert \n2.Delete \n3.Search \n4.Sort \n5.Display 6.Exit \nEnter your choice : ");
+		printf("\n1.Insert \n2.Delete \n3.Search \n4.Sort \n5.Display \n6.Exit \nEnter your choice : ");
 		scanf("%d", &opt);
 	
 		switch(opt) {

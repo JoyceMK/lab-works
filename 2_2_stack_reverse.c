@@ -5,7 +5,7 @@ int top = -1;
 
 void push(char item) {
     if(top + 1 == SIZE) {
-        printf("ERROR : Stack overflow!! \n");
+        printf("Stack overflow!! \n");
         return;
     }
     stack[++top] = item;
@@ -13,7 +13,7 @@ void push(char item) {
 char pop() {
     if(top == -1) {
 
-        printf("ERROR : Stack underflow!! \n");
+        printf("Stack underflow!! \n");
         return '\0';
     }
     return stack[top--];
