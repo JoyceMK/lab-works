@@ -6,7 +6,7 @@ int insert(int ar[], int index, int size) {
         return;
     }
 
-    printf("Enter the element : ");
+    printf("Enter the element 1 : ");
     scanf("%d", &ar[index++]);
     
     return index;
